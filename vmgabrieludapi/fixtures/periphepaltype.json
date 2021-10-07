@@ -1,0 +1,26 @@
+[
+  {
+    "pk": 1,
+    "model": "vmgabrieludapi.periphepaltype",
+    "fields": {
+      "name": "Update",
+      "description": "Update"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "vmgabrieludapi.periphepaltype",
+    "fields": {
+      "name": "Update",
+      "description": "Update"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "vmgabrieludapi.periphepaltype",
+    "fields": {
+      "name": "Update",
+      "description": "Update"
+    }
+  }
+]

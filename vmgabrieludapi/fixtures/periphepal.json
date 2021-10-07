@@ -1,0 +1,29 @@
+[
+  {
+    "pk": 1,
+    "model": "vmgabrieludapi.periphepal",
+    "fields": {
+      "name": "Update",
+      "description": "Update",
+      "type_periphepal": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "vmgabrieludapi.periphepal",
+    "fields": {
+      "name": "Update",
+      "description": "Update",
+      "type_periphepal": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "vmgabrieludapi.periphepal",
+    "fields": {
+      "name": "Update",
+      "description": "Update",
+      "type_periphepal": 1
+    }
+  }
+]

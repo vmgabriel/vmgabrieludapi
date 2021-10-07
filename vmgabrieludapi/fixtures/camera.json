@@ -1,0 +1,23 @@
+[
+  {
+    "pk": 1,
+    "model": "vmgabrieludapi.camera",
+    "fields": {
+      "name": "Update"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "vmgabrieludapi.camera",
+    "fields": {
+      "name": "Update"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "vmgabrieludapi.camera",
+    "fields": {
+      "name": "Update"
+    }
+  }
+]

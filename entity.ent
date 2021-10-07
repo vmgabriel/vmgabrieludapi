@@ -1,0 +1,20 @@
+defmodule PeriphepalType : pertype  do
+  name -> string : False > 120 =
+  description -> string : False > 200 =
+end
+
+defmodule Periphepal : per do
+  name -> string : False > 100 =
+  description -> string : True > 200 =
+  type_periphepal -> PeriphepalType : False > 10 =
+end
+
+defmodule Camera : cam do
+  name -> string : False > 100 =
+end
+
+defmodule CameraPeriphepal : camper do
+  camera -> Camera : False > 10 =
+  periphepal -> Periphepal : False > 20 =
+end
+

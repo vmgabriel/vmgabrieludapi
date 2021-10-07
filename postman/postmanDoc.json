@@ -1,0 +1,1121 @@
+{
+    "info": {
+        "_postman_id": "362c1c89-4a2b-4fbe-aefb-adaeb02bfa06",
+        "name": "vmgabrieludapi",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+			      "item": [
+				        {
+					          "name": "Auth",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"email_here\",\n    \"password\": \"password_here\"\n}",
+							              "options": {
+								                "raw": {
+									                  "language": "json"
+                                }
+						                }
+						            },
+						            "url": {
+							              "raw": "{{urlServer}}:{{portServer}}/api/auth/jwt/",
+							              "protocol": "http",
+							              "host": [
+								                "{{urlServer}}"
+                            ],
+							              "port": "{{portServer}}",
+							              "path": [
+								                "api",
+								                "auth",
+								                "jwt",
+								                ""
+							              ]
+                        }
+                    },
+					          "response": []
+				        },
+				        {
+                    "name": "Refresh Auth",
+					          "request": {
+						            "auth": {
+							              "type": "noauth"
+						            },
+						            "method": "POST",
+						            "header": [],
+						            "body": {
+							              "mode": "raw",
+							              "raw": "{\n    \"token\": \"the_token\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+						            "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/auth/jwt/refresh/",
+                            "protocol": "http",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{urlServer}}",
+                            "path": [
+                                "api",
+                                "auth",
+								                "jwt",
+								                "refresh",
+								                ""
+							              ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Logout Auth",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "the_token",
+                                    "value": "",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+						            "method": "POST",
+						            "header": [],
+						            "body": {
+                            "mode": "raw",
+                            "raw": "",
+							              "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/auth/jwt/logout/",
+							              "protocol": "http",
+							              "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{urlServer}}",
+                            "path": [
+                                "api",
+                                "auth",
+								                "jwt",
+								                "logout",
+								                ""
+							              ]
+                        }
+                    },
+					          "response": []
+                }
+            ]
+        },        {
+            "name": "Periphepaltype",
+            "item": [
+                {
+                    "name": "Get All Periphepaltypes",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepaltypes/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepaltypes",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get One Periphepaltype by Id",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepaltypes/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepaltype",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Periphepaltype",
+                    "request": {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"test data\",\n    \"description\": \"test data\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepaltypes/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepaltypes",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Periphepaltype by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"test data\",\n    \"description\": \"test data\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepaltypes/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepaltypes",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Periphepaltype by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepaltypes/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepaltype",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Periphepal",
+            "item": [
+                {
+                    "name": "Get All Periphepals",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepals/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepals",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get One Periphepal by Id",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepals/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepal",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Periphepal",
+                    "request": {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"test data\",\n    \"description\": \"test data\",\n    \"type_periphepal\": \"PeriphepalType\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepals/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepals",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Periphepal by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"test data\",\n    \"description\": \"test data\",\n    \"type_periphepal\": \"PeriphepalType\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepals/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepals",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Periphepal by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/periphepals/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "periphepal",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Camera",
+            "item": [
+                {
+                    "name": "Get All Cameras",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameras/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameras",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get One Camera by Id",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameras/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "camera",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Camera",
+                    "request": {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"test data\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameras/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameras",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Camera by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"test data\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameras/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameras",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Camera by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameras/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "camera",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Cameraperiphepal",
+            "item": [
+                {
+                    "name": "Get All Cameraperiphepals",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameraperiphepals/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameraperiphepals",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get One Cameraperiphepal by Id",
+                    "request": {
+                        "auth": {
+                            "type": "oauth2",
+                            "oauth2": [
+                                {
+                                    "key": "accessToken",
+                                    "value": "{{accessToken}}",
+                                    "type": "string"
+                                },
+                                {
+                                    "key": "addTokenTo",
+                                    "value": "header",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameraperiphepals/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameraperiphepal",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Cameraperiphepal",
+                    "request": {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"camera\": \"Camera\",\n    \"periphepal\": \"Periphepal\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameraperiphepals/",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameraperiphepals",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Cameraperiphepal by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"camera\": \"Camera\",\n    \"periphepal\": \"Periphepal\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameraperiphepals/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameraperiphepals",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Cameraperiphepal by Id",
+                    "request":  {
+                        "auth": "oauth2",
+                        "oauth2": [
+                            {
+                                "key": "accessToken",
+                                "value": "{{accessToken}}",
+                                "type": "string"
+                            },
+                            {
+                                "key": "addTokenTo",
+                                "value": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "string"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{urlServer}}:{{portServer}}/api/v1/cameraperiphepals/1",
+                            "host": [
+                                "{{urlServer}}"
+                            ],
+                            "port": "{{portServer}}",
+                            "path": [
+                                "api",
+                                "v1",
+                                "cameraperiphepal",
+                                "1"
+                            ],
+                            "query": [
+                                {
+                                    "key": "userId",
+                                    "value": "33",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
